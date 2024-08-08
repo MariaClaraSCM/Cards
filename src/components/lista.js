@@ -1,19 +1,21 @@
-import Info from "./Informacoes";
-import Ana from "../assets/Captura de Tela (4).png"
+import Info from './Informacoes'
+import Ana from "../assets/Ana.jpg"
+import Bia from '../assets/Bia.jfif';
+import maria from '../assets/Captura de Tela (4).png'
 
 export default function Lista(){
     return(
         <>
-            <h1>Quem nos somos?</h1>
+            <h1>Cuidado com o volume!</h1>
 
             <ul className="card">
                 <Info foto={Ana}  nome="Analice" idade={17} 
                 hobbie={"Estudar música"}
                 />
-                <Info nome="Bianca" idade={18} 
+                <Info foto={Bia} nome="Bianca" idade={18} 
                 hobbie={"Ler"}
                 />
-                <Info nome="Maria Clara" idade={17} 
+                <Info foto={maria} nome="Maria Clara" idade={17} 
                 hobbie={"Escutar música"}
                 />
                 <Info/>
