@@ -1,4 +1,4 @@
-import Info from './Informacoes'
+/*import Info from './Informacoes'
 import Ana from "../assets/Ana.jpg"
 import Bia from '../assets/Bia.jfif';
 import maria from '../assets/Captura de Tela (4).png'
@@ -22,4 +22,4 @@ export default function Lista(){
             </ul>
         </>
     )
-}
+}*/
