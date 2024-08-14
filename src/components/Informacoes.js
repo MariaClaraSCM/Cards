@@ -1,11 +1,12 @@
+import React from 'react';
 import PropTypes from 'prop-types';
-import FtDefault from '../assets/user-default.png';
+import FtDefault from '../assets/default-foto.png';
 import '../index.css';
 
-function Info({foto, nome, idade, hobbie, profissao, nomePets, musica}){
-    return(
+function Info({ foto, nome, idade, hobbie, profissao, nomePets, musica }) {
+    return (
         <div className=''>
-            <img className='FT' src={foto} alt={nome}/>
+            <img className='FT' src={foto} alt={nome} />
             <div className='txt'>
                 <ul className='UL'>
                     <li><p className='cor'>Nome: </p>{nome}</li>
@@ -17,25 +18,25 @@ function Info({foto, nome, idade, hobbie, profissao, nomePets, musica}){
                 </ul>
             </div>
         </div>
-    )
+    );
 }
 
-function InfoHeaderModal({ foto, nome, musica}){
-    return(
+function InfoHeaderModal({ foto, nome, musica }) {
+    return (
         <div className='header-modal'>
             <div className='flex-modal'>
-                <img className='FT-modal' src={foto} alt={nome}/>
+                <img className='FT-modal' src={foto} alt={nome} />
                 <ul className=''>
-                        <li><p className='cor'>Nome: </p>{nome}</li>
-                        <li className='Musica'><p className='cor'>Música: </p>{musica}</li>
+                    <li><p className='cor'>Nome: </p>{nome}</li>
+                    <li className='Musica'><p className='cor'>Música: </p>{musica}</li>
                 </ul>
             </div>
         </div>
-    )
+    );
 }
 
-function InfoBodyModal({nome, idade, hobbie, profissao, nomePets, esPets, desc}){
-    return(
+function InfoBodyModal({ idade, hobbie, profissao, nomePets, esPets, desc }) {
+    return (
         <div className=''>
             <div className='txt-modal'>
                 <ul className='UL-modal'>
@@ -48,40 +49,40 @@ function InfoBodyModal({nome, idade, hobbie, profissao, nomePets, esPets, desc})
                 </ul>
             </div>
         </div>
-    )
+    );
 }
 
 Info.propTypes = {
-    foto: PropTypes.string.isRequired,
+    foto: PropTypes.string,
     nome: PropTypes.string.isRequired,
     idade: PropTypes.number.isRequired,
     hobbie: PropTypes.string.isRequired,
     profissao: PropTypes.string.isRequired,
     nomePets: PropTypes.string.isRequired,
-    musica: PropTypes.string.isRequired
-}
+    musica: PropTypes.string.isRequired,
+};
 
 Info.defaultProps = {
-    foto: <img src={FtDefault} alt='Desconhecido'/>,
+    foto: FtDefault,
     nome: 'Desconhecido',
     idade: 0,
     hobbie: 'Não tenho hobbie',
     profissao: 'Não trabalho',
     nomePets: '--',
-    musica: 'Gosto de todas'
-}
+    musica: 'Gosto de todas',
+};
 
 InfoHeaderModal.propTypes = {
-    foto: PropTypes.string.isRequired,
+    foto: PropTypes.string,
     nome: PropTypes.string.isRequired,
-    musica: PropTypes.string.isRequired
-}
+    musica: PropTypes.string.isRequired,
+};
 
 InfoHeaderModal.defaultProps = {
-    foto: <img src={FtDefault} alt='Desconhecido'/>,
+    foto: FtDefault,
     nome: 'Desconhecido',
-    musica: 'Gosto de todas'
-}
+    musica: 'Gosto de todas',
+};
 
 InfoBodyModal.propTypes = {
     idade: PropTypes.number.isRequired,
@@ -89,16 +90,16 @@ InfoBodyModal.propTypes = {
     profissao: PropTypes.string.isRequired,
     nomePets: PropTypes.string.isRequired,
     esPets: PropTypes.string.isRequired,
-    desc: PropTypes.string.isRequired 
-}
+    desc: PropTypes.string.isRequired,
+};
 
 InfoBodyModal.defaultProps = {
     idade: 0,
     hobbie: 'Não tenho hobbie',
     profissao: 'Não trabalho',
     nomePets: '--',
-    desc: "",
-    esPets: ""
-}
+    desc: '',
+    esPets: '',
+};
 
-export {Info, InfoBodyModal, InfoHeaderModal};
+export { Info, InfoBodyModal, InfoHeaderModal };

@@ -1,7 +1,7 @@
 import Ana from "../assets/Ana.jpg"
 import Bia from '../assets/Bia.png';
 import maria from '../assets/Maria.png';
-import UserDefault from '../assets/user-default.png'
+// import UserDefault from '../assets/user-default.png'
 import {ModalAna, ModalBia, ModalMaria, ModalDefault} from './Modal';
 import { Info } from "./Informacoes";
 import { useState } from "react";
@@ -45,7 +45,7 @@ export default function Card(){
                 </div>
 
                 <div className="list">
-                    <Info foto={UserDefault}/>
+                    <Info/>
                     <div className='btnAjuste'>
                         <button className='btn' onClick={() => setModal(true)}>Ver Mais</button>
                     </div> 
