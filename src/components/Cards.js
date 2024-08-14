@@ -1,61 +1,60 @@
-
-import Fechar from '../assets/x.png';
 import Ana from "../assets/Ana.jpg"
-import Bia from '../assets/Bia.jfif';
-import maria from '../assets/Captura de Tela (4).png';
-import discAna from '../assets/disco-ana.png';
-import { Info, InfoBodyModal, InfoHeaderModal } from "./Informacoes";
-import "./Modal"
+import Bia from '../assets/Bia.png';
+import maria from '../assets/Maria.png';
+import UserDefault from '../assets/user-default.png'
+import {ModalAna, ModalBia, ModalMaria, ModalDefault} from './Modal';
+import { Info } from "./Informacoes";
+import { useState } from "react";
 
 export default function Card(){
+
+    const [openModal, setOpenModal] = useState(false);
+    const [abrirModal, setAbrirModal] = useState(false);
+    const [abrir, setAbrir] = useState(false);
+    const [modal, setModal] = useState(false);
+
     return(
         <div id="blur">
             <h1>Cuidado com o volume!</h1>
             <div className="Ajustes">
                 <div className="list">
                     <Info foto={Ana}  nome="Analice" idade={17} 
-                    hobbie={"Estudar música"}
+                    hobbie="Estudar música, ler etc." nomePets="Mabel" profissao="Desenvolvedora de Software" musica="Getting older"
                     />
                     <div className='btnAjuste'>
-                        <button className='btn' onclick="modalAnaOpen()">Ver Mais</button>
+                        <button className='btn' onClick={() => setOpenModal(true)}>Ver Mais</button>
                     </div>
                 </div>
 
                 <div className="list">
                     <Info foto={Bia} nome="Bianca" idade={18} 
-                    hobbie={"Ler"}
+                    hobbie={"Ler, ouvir música, jogar etc."} nomePets="Jorge" profissao="Design Gráfico" musica="High School Sweethearts"
                     /> 
                     <div className='btnAjuste'>
-                        <button className='btn'>Ver Mais</button>
+                        <button className='btn' onClick={() => setAbrirModal(true)}>Ver Mais</button>
                     </div>                   
                 </div>
 
                 <div className="list">
                     <Info foto={maria} nome="Maria Clara" idade={17} 
-                    hobbie={"Escutar música"}
+                    hobbie={"Escutar música, ler, desenhar etc."} nomePets="Mike Hulk e Nino" profissao="Juíza ou Advogada" musica="Velha infância"
                     /> 
                     <div className='btnAjuste'>
-                        <button className='btn'>Ver Mais</button>
+                        <button className='btn' onClick={() => setAbrir(true)}>Ver Mais</button>
                     </div>                   
                 </div>
 
                 <div className="list">
-                    <Info/>
+                    <Info foto={UserDefault}/>
                     <div className='btnAjuste'>
-                        <button className='btn'>Ver Mais</button>
+                        <button className='btn' onClick={() => setModal(true)}>Ver Mais</button>
                     </div> 
                 </div>
             </div>
-            <div className='Modal' id='modalAna'>
-                <img className='Fechar' onclick="modalAna()" src={Fechar} alt='Fechar'/>
-                <div className='flex'>
-                    <div>
-                        <InfoHeaderModal foto={Ana}  nome="Analice" />
-                        <InfoBodyModal/>
-                    </div>
-                    <img className='FT-disco' src={discAna} alt='disco Ana'/>
-                </div>
-            </div>
+            <ModalAna isOpen={openModal} setModalOpen={() => setOpenModal(!openModal)}/>
+            <ModalBia estaAberto={abrirModal} setModalAberto={() => setAbrirModal(!abrirModal)}/>
+            <ModalMaria Aberto={abrir} setAberto={() => setAbrir(!abrir)}/>
+            <ModalDefault esta={modal} setAbertoModal={() => setModal(!modal)}/>
         </div>
     )
 }

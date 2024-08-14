@@ -13,7 +13,7 @@ function Info({foto, nome, idade, hobbie, profissao, nomePets, musica}){
                     <li><p className='cor'>Hobbie: </p>{hobbie}</li>
                     <li><p className='cor'>Pet: </p>{nomePets}</li>
                     <li><p className='cor'>Profissão: </p> {profissao}</li>
-                    <li><p className='cor'>Música fav: </p>{musica}</li>
+                    <li><p className='corM'>Música fav: </p>{musica}</li>
                 </ul>
             </div>
         </div>
@@ -23,26 +23,27 @@ function Info({foto, nome, idade, hobbie, profissao, nomePets, musica}){
 function InfoHeaderModal({ foto, nome, musica}){
     return(
         <div className='header-modal'>
-            <div className='flex'>
+            <div className='flex-modal'>
                 <img className='FT-modal' src={foto} alt={nome}/>
                 <ul className=''>
                         <li><p className='cor'>Nome: </p>{nome}</li>
-                        <li><p className='cor'>Música: </p>{musica}</li>
+                        <li className='Musica'><p className='cor'>Música: </p>{musica}</li>
                 </ul>
             </div>
         </div>
     )
 }
 
-function InfoBodyModal({nome, idade, hobbie, profissao, nomePets, }){
+function InfoBodyModal({nome, idade, hobbie, profissao, nomePets, esPets, desc}){
     return(
         <div className=''>
-            <div className='txt'>
-                <ul className='UL'>
-                    <li><p className='cor'>Nome: </p>{nome}</li>
+            <div className='txt-modal'>
+                <ul className='UL-modal'>
                     <li><p className='cor'>Idade: </p>{idade} Anos</li>
                     <li><p className='cor'>Hobbie: </p>{hobbie}</li>
                     <li><p className='cor'>Pet: </p>{nomePets}</li>
+                    <li><p className='cor'>Espécie: </p>{esPets}</li>
+                    <li><p className='cor'>Descrição: </p>{desc}</li>
                     <li><p className='cor'>Profissão: </p> {profissao}</li>
                 </ul>
             </div>
@@ -87,6 +88,8 @@ InfoBodyModal.propTypes = {
     hobbie: PropTypes.string.isRequired,
     profissao: PropTypes.string.isRequired,
     nomePets: PropTypes.string.isRequired,
+    esPets: PropTypes.string.isRequired,
+    desc: PropTypes.string.isRequired 
 }
 
 InfoBodyModal.defaultProps = {
@@ -94,6 +97,8 @@ InfoBodyModal.defaultProps = {
     hobbie: 'Não tenho hobbie',
     profissao: 'Não trabalho',
     nomePets: '--',
+    desc: "",
+    esPets: ""
 }
 
 export {Info, InfoBodyModal, InfoHeaderModal};

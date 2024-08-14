@@ -72,10 +72,28 @@ h1{
   line-height: 3vh;
 }
 
+.txt-modal{
+  width: 100%;
+  height: 12vw;
+  display: flex;
+  align-items: center;
+  line-height: 3vh;
+  margin-left: 2rem;
+}
+
 .UL{
   list-style: none;
   padding: 0;
   width: 16vw;
+  text-align: left;
+  font-size: 1vw;
+  font-weight: 500;
+}
+
+.UL-modal{
+  list-style: none;
+  padding: 0;
+  width: 90%;
   text-align: left;
   font-size: 1vw;
   font-weight: 500;
@@ -88,8 +106,21 @@ h1{
   color: #661CB1;
 }
 
+.corM{
+  margin: 0;
+  padding: 0;
+  margin-right: .5vw;
+  color: #661CB1;
+  width: 7vw;
+}
+
 li{
   display: flex;
+  margin-bottom: 0.2vw;
+}
+
+.Musica{
+  width: 100%;
 }
 
 .btn {
@@ -116,7 +147,8 @@ li{
 
 
 .btnAjuste {
-  width: 100%;
+  width: 85%;
+  margin: 1rem;
 }
 /* 
 .btn:hover {
@@ -126,44 +158,72 @@ li{
 
 .Fechar{
   width: 1vw;
+  cursor: pointer;
 }
 
 .FT-modal{
   border-radius: 50%;
   width: 9vw;
-  border: 3px solid #fff;
-}
-
-#modalAna{
-  position: fixed;
-  top: 30%;
-  left: 50%;
-  transform: translate(-50%, -50%);
-  box-shadow: 0 5px 30px gray;
-  background-color: #fff;
-  visibility: hidden;
-  opacity: 0;
-  transition: 0.5s;
-  width: 70%;
-}
-
-#modalAna.active{
-  top: 40%;    
-  visibility: visible;
-  opacity: 1;
-  transition: 0.5s;
-  text-align: justify;
-  z-index: 10;
+  border: 3px solid #c7c7c7;
 }
 
 .flex{
   display: flex;
   align-items: center;
+  margin: 1rem 1rem 2rem 1rem;
+  width: 95%;
+  justify-content: space-around;
+}
+
+.flex-modal{
+  display: flex;
+  align-items: center;
+  margin: 1rem 0rem 1rem 2rem;
+  width: 95%;
+  justify-content: space-around;
+}
+
+.flex-fechar{
+  display: flex;
+  align-items: center;
   justify-content: center;
   margin: 1rem;
+  width: 96%;
+  align-items: center;
+  justify-content: end;
 }
 
 .FT-disco{
-  width: 25vw;
+  width: 20vw;
+  animation: FT-disco infinite 10s linear;
+  margin: 0rem 2rem 0rem 0rem;
 }
 
+@keyframes FT-disco {
+  from {
+    transform: rotate(0deg);
+  }
+  to {
+    transform: rotate(360deg);
+  }
+}
+
+.Background-modal{
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background-color: rgba(0, 0, 0, 0.6);
+  z-index: 5;
+}
+
+.body-modal{
+  position: fixed;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  background-color: #fff;
+  width: 70%;
+  border-radius: 2vw;
+}
