@@ -1,4 +1,4 @@
-Acesse o site aqui: cards[https://cards-coral-omega.vercel.app/]
+Acesse o site aqui: [cards](https://cards-coral-omega.vercel.app/)
 
 # Getting Started with Create React App
 
